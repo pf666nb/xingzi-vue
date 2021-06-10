@@ -16,19 +16,16 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 // 请求拦截器，内部根据返回值，重新组装，统一管理。
 axios.interceptors.response.use(res => {
-    if (typeof res.data !== 'object') {
-        alert('服务端异常！')
-        return Promise.reject(res)
-    }
-    if (res.data.resultCode != 200) {
+
+    if (res.data.code != 0) {
         if (res.data.message) alert(res.data.message)
-        if (res.data.resultCode == 419) {
+        if (res.data.code == 419) {
             router.push({ path: '/login' })
         }
         return Promise.reject(res.data)
     }
 
-    return res.data.data
+    return res.data
 })
 
 export default axios

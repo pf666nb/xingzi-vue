@@ -12,7 +12,8 @@
     "js-md5": "^0.7.3",
     "qs": "^6.10.1",
     "vue": "^3.0.5",
-    "vue-router": "^4.0.8"
+    "vue-router": "^4.0.8",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.3",

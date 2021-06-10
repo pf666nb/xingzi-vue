@@ -37,7 +37,7 @@
 
     import axios from '@/utils/axios'
     import { reactive, ref, toRefs } from 'vue'
-    import { localSet } from '@/utils'
+    import { localSet ,localGet} from '@/utils'
     export default {
         name: 'Login',
         setup() {
@@ -65,15 +65,14 @@
                 loginForm.value.validate((valid) => {
                     // valid 是一个布尔值，表示表单是否通过了上面 rules 的规则。
                     if (valid) {
-                        console.log(state.ruleForm.username)
-                        console.log(state.ruleForm.password)
-                        // /adminUser/login 登录接口路径
-
                         axios.post('/login',
-                            qs.stringify({username:state.ruleForm.username,
-                            password:state.ruleForm.password})
-                            ,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {
-
+                            qs.stringify({
+                                username:state.ruleForm.username,
+                                password:state.ruleForm.password
+                            })
+                            ,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+                            .then(res => {
+                                localSet("user",res.user)
                             window.location.href = '/'
                         })
                     } else {
@@ -101,7 +100,7 @@
 <style scoped>
 
     .login-body {
-        padding-top: 200px;
+        padding-top: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
