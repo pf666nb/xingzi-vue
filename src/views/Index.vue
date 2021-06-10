@@ -26,6 +26,8 @@
 
 <script>
     import ShopCard from "@/components/ShopCard.vue";
+    import {localGet} from "../utils";
+    import {ref} from 'vue'
     export default {
         name: 'Index',
         components: {ShopCard},
@@ -38,12 +40,17 @@
                     "src\\assets\\bg4.jpeg"
                 ]
             }
+        },
+        setup(){
+
+
         }
     }
 
 </script>
 <style scoped>
     .main{
+        overflow:auto;
         height: 80rem;
     }
 

@@ -8,6 +8,14 @@
                 <a href="">金融<span>|</span></a>
                 <a href="">有品<span>|</span></a>
                 <a href="">小爱开放平台</a>
+
+            </div>
+            <div class="SearchInput">
+                <el-input
+                        placeholder="请输入内容"
+                        prefix-icon="el-icon-search"
+                >
+                </el-input>
             </div>
 
             <div class="topbar-cart"><a href="">购物车 <span>（0）</span></a></div>
@@ -15,7 +23,7 @@
             <div class="topbar-info">
                 <div v-if="isLogin">
                     <el-avatar shape="square" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-                    <a href="" class="sep">消息通知</a>
+                    <a @click.prevent="logout" class="sep">退出登录</a>
                 </div>
                 <div v-else>
                     <router-link to="login">登录<span>|</span></router-link>
@@ -29,14 +37,26 @@
 
 <script>
     import {ref} from 'vue'
+    import {localGet, localRemove} from "../utils";
     export default {
         name: "Header",
         setup(){
-            const isLogin = ref(true)
+            const isLogin = ref(false)
+            const logout = ref(function () {
+                localRemove('user')
+                isLogin.value = false
 
-            return{
-                isLogin
+            })
+            if (localGet('user')!=null) {
+                isLogin.value = true
+            }else{
+                isLogin.value = false
             }
+            return{
+                isLogin,
+                logout
+            }
+
         }
     }
 </script>
@@ -68,7 +88,12 @@
         margin: 0 auto;
         width: 1226px;
     }
-
+    .SearchInput{
+        float: left;
+        padding-left: 100px;
+        padding-top: 10px;
+        width: 500px;
+    }
     .container::before .container::after {
         content: '';
         display: table;
