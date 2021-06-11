@@ -18,8 +18,7 @@
             <ShopCard/>
             <ShopCard/>
         </div>
-
-
+        <Footer/>
 
     </div>
 </template>
@@ -28,9 +27,10 @@
     import ShopCard from "@/components/ShopCard.vue";
     import {localGet} from "../utils";
     import {ref} from 'vue'
+    import Footer from "@/components/Footer.vue";
     export default {
         name: 'Index',
-        components: {ShopCard},
+        components: {Footer, ShopCard},
         data(){
             return{
                 backgroudimage:[
