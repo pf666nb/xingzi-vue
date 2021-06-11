@@ -33,10 +33,10 @@
                     <dd><a rel="nofollow" href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">授权体验店</a></dd>
                 </dl>
                 <dl class="col-article">
-                    <dt>关于新蜂</dt>
-                    <dd><a rel="nofollow" href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">了解新蜂</a>
+                    <dt>关于杏子</dt>
+                    <dd><a rel="nofollow" href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">了解杏子</a>
                     </dd>
-                    <dd><a rel="nofollow" href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">加入新蜂</a>
+                    <dd><a rel="nofollow" href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">加入杏子</a>
                     </dd>
                     <dd><a rel="nofollow" href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">捐赠维护</a>
                     </dd>
@@ -45,7 +45,7 @@
             <div class="footer-links w1100">
                 <p>友情链接：</p>
                 <div class="clearfix">
-                    <a href="/index">新蜂商城</a>
+                    <a href="/index">杏子商城</a>
                     <a href="/admin">后台管理系统</a>
                     <a href="https://edu.csdn.net/course/detail/26258">课程视频</a>
                     <a href="https://juejin.im/book/5da2f9d4f265da5b81794d48/section/5da2f9d6f265da5b794f2189">课程文档</a>
@@ -57,12 +57,12 @@
             </div>
             <div class="footer-info w1100">
                 <div class="info-text w1100">
-                    <p><a href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">新蜂商城 &nbsp; | &nbsp;
-                        Powered by 十三&nbsp;
+                    <p><a href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">杏子商城 &nbsp; | &nbsp;
+                        Powered by coderwu&nbsp;
                         | &nbsp;</a>
-                        &nbsp;QQ交流群：796794009&nbsp;&nbsp;
+                        &nbsp;QQ：1340701723&nbsp;&nbsp;
                     </p>
-                    <p><a href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">Copyright ©newbee.ltd All
+                    <p><a href="https://gitee.com/newbee-ltd/newbee-mall" target="_blank">Copyright ©xingzi.ltd All
                         Rights
                         Reserved.&nbsp; | &nbsp; 浙ICP备17008806号-5 </a></p>
                 </div>

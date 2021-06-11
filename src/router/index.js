@@ -1,7 +1,9 @@
-// router/index.js
+
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Index from '@/views/Index.vue'
 import Login from "@/views/Login.vue";
+import Search from "@/views/Search.vue";
+import User from "@/views/User.vue";
 import {localGet} from "../utils";
 
 const router = createRouter({
@@ -14,6 +16,14 @@ const router = createRouter({
         {
             path: '/login',
             component: Login
+        },
+        {
+            path: '/search',
+            component: Search
+        },
+        {
+            path: '/user',
+            component: User
         }
     ]
 })

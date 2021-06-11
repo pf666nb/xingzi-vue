@@ -4,7 +4,7 @@
     <el-main><router-view></router-view></el-main>
 
 
-<!--    <el-footer v-if="showHeader"> <Footer/> </el-footer>-->
+    <el-footer v-if="showHeader"> <Footer/> </el-footer>
 
   </el-container>
 
@@ -20,7 +20,7 @@
     name: 'App',
     components: {Footer, Header},
     setup(){
-      const noHeader = ['/login']
+      const noHeader = ['/login','/user','/User']
       const router = useRouter()
       const state = reactive({
         showHeader: true,

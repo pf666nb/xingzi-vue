@@ -6,19 +6,14 @@
             </el-carousel-item>
         </el-carousel>
 
-        <el-divider content-position="left">热销商品</el-divider>
+        <el-divider content-position="center">热销商品<i class="el-icon-s-goods"></i></el-divider>
         <div class="hotShop">
-        <ShopCard/>
-        <ShopCard/>
-        <ShopCard/>
-        <ShopCard/>
-            <ShopCard/>
-            <ShopCard/>
-            <ShopCard/>
-            <ShopCard/>
-            <ShopCard/>
+            <div v-for="item in hotGoodsList" :key="item.goodsId">
+                 <ShopCard :hotGood="item"/>
+            </div>
         </div>
-        <Footer/>
+        <el-divider content-position="center">新品推荐<i class="el-icon-s-goods"></i></el-divider>
+<!--        <Footer/>-->
 
     </div>
 </template>
@@ -28,6 +23,7 @@
     import {localGet} from "../utils";
     import {ref} from 'vue'
     import Footer from "@/components/Footer.vue";
+    import axios from '@/utils/axios'
     export default {
         name: 'Index',
         components: {Footer, ShopCard},
@@ -43,6 +39,17 @@
         },
         setup(){
 
+            let hotGoodsList = ref([]);
+            //热销商品的获取
+            axios.get("/goods/type/1").then(
+                (res) =>{
+                    hotGoodsList.value =  res.data
+                }
+            )
+
+            return{
+                hotGoodsList
+            }
 
         }
     }

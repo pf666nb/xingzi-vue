@@ -4,13 +4,13 @@
             <div class="row">
                 <div class="el-wrapper">
                     <div class="box-up">
-                        <img class="img" src="src/assets/0a592388-1535-4f9f-8201-ecb78c48bb3d.jpg" alt="">
+                        <img class="img" :src="goodDetail.goodsCoverImg" alt="">
                         <div class="img-info">
                             <div class="info-inner">
-                                <span class="p-name">I feel like Pablo</span>
-                                <span class="p-company">Yeezy</span>
+                                <span class="p-name">{{goodDetail.goodsName}}</span>
+                                <span class="p-company">{{goodDetail.goodsIntro}}</span>
                             </div>
-                            <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span></div>
+                            <div class="a-size">{{goodDetail.goodsName}}<span class="size">{{goodDetail.goodsIntro}}</span></div>
                         </div>
                     </div>
 
@@ -20,9 +20,9 @@
                         </div>
 
                         <a class="cart" href="#">
-                            <span class="price">$120</span>
+                            <span class="price">¥{{goodDetail.sellingPrice}}</span>
                             <span class="add-to-cart">
-              <span class="txt">Add in cart</span>
+              <span class="txt">加入购物车</span>
             </span>
                         </a>
                     </div>
@@ -33,8 +33,24 @@
 </template>
 
 <script>
+    import {ref} from 'vue'
     export default {
-        name: "ShopCard"
+        props: {
+            hotGood: {
+                type:Object,
+                default: []
+            }
+        },
+        name: "ShopCard",
+        setup(props){
+            let goodDetail = ref(null)
+            console.log(props.hotGood)
+            goodDetail.value= props.hotGood
+            return{
+                goodDetail
+            }
+        }
+
     }
 </script>
 

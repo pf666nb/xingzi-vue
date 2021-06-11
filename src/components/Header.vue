@@ -14,6 +14,8 @@
                 <el-input
                         placeholder="请输入内容"
                         prefix-icon="el-icon-search"
+                        v-model="searchInput"
+                        @keyup="Onsearch"
                 >
                 </el-input>
             </div>
@@ -36,12 +38,25 @@
 </template>
 
 <script>
-    import {ref} from 'vue'
+    import bus from "../bus";
+    import {ref,getCurrentInstance} from 'vue'
     import {localGet, localRemove} from "../utils";
     export default {
         name: "Header",
         setup(){
+            const {ctx} = getCurrentInstance()
+            const searchInput =ref("")
             const isLogin = ref(false)
+            const Onsearch = ref(function (e) {
+                if (e.key==="Enter"){
+
+                    if (ctx.$root.$route.path!='/search'){
+                        console.log("调用了push函数")
+                        ctx.$root.$router.push('search')
+                    }
+                    bus.$emit('Search',searchInput.value)
+                }
+            })
             const logout = ref(function () {
                 localRemove('user')
                 isLogin.value = false
@@ -54,7 +69,9 @@
             }
             return{
                 isLogin,
-                logout
+                logout,
+                searchInput,
+                Onsearch
             }
 
         }
